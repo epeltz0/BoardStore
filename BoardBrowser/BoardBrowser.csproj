@@ -169,6 +169,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BoardController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TransactionController.cs" />
@@ -242,8 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Ratings\" />
-    <Folder Include="Views\Store\" />
+    <Folder Include="Views\Customer\" />
     <Folder Include="Views\Transaction\" />
   </ItemGroup>
   <ItemGroup>
@@ -260,17 +260,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BoardBrowser.Data\BoardBrowser.Data.csproj">
-      <Project>{c525205d-8484-4f0b-b7ba-f367437fa37b}</Project>
+    <ProjectReference Include="..\ClassLibrary1\BoardBrowser.Data.csproj">
+      <Project>{B6949ECB-B000-448F-9FB4-313882E3D1E6}</Project>
       <Name>BoardBrowser.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BoardBrowser.Models\BoardBrowser.Models.csproj">
-      <Project>{86e7c852-6ea9-47ec-b24a-a87c7ae689f7}</Project>
-      <Name>BoardBrowser.Models</Name>
+    <ProjectReference Include="..\ClassLibrary2\BoardBrowser.Service.csproj">
+      <Project>{1AD20AE7-2E98-4372-8FF5-1C2E07F30D11}</Project>
+      <Name>BoardBrowser.Service</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BoardBrowser.Services\BoardBrowser.Services.csproj">
-      <Project>{944dff07-be29-47bc-81f6-2c41d0615537}</Project>
-      <Name>BoardBrowser.Services</Name>
+    <ProjectReference Include="..\ClassLibrary3\BoardBrowser.Models.csproj">
+      <Project>{1F7F432E-C30C-4C1E-A640-8673CDF99841}</Project>
+      <Name>BoardBrowser.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
