@@ -3,6 +3,7 @@ using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using ClassLibrary1;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -13,11 +14,17 @@ namespace BoardBrowser.Data
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
+            
             return userIdentity;
         }
+    }
+
+    public class ApplicationRole:IdentityRole
+    {
+        public ApplicationRole() :base() { }
+        public ApplicationRole(string roleName) : base(roleName) { }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -47,6 +54,8 @@ namespace BoardBrowser.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+
+        public DbSet<Roles> Role { get; set; }
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
