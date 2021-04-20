@@ -74,7 +74,7 @@ namespace BoardBrowser.Services
                     };
             }
         }
-        public bool UpdateTransaciton(TransactionEdit model)
+        public bool UpdateTransaction(TransactionEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {

@@ -60,5 +60,68 @@ namespace BoardBrowser.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateBoardService();
+            var detail = service.GetBoardById(id);
+            var model =
+                new BoardEdit
+                {
+                    BoardId = detail.BoardId,
+                    BoardCategory = detail.BoardCategory,
+                    BoardName = detail.BoardName,
+                    Description = detail.Description,
+                    Price = detail.Price
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BoardEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.BoardId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateBoardService();
+
+            if (service.UpdateBoard(model))
+            {
+                TempData["SaveResult"] = "Your board was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your board could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateBoardService();
+            var model = svc.GetBoardById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteBoard(int id)
+        {
+            var service = CreateBoardService();
+
+            service.DeleteBoard(id);
+
+            TempData["SaveResult"] = "Your board was deleted";
+
+            return RedirectToAction("Index");
+        }
     }
+
 }

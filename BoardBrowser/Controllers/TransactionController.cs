@@ -58,5 +58,67 @@ namespace BoardBrowser.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateTransactionService();
+            var detail = service.GetTransactionById(id);
+            var model =
+                new TransactionEdit
+                {
+                    TransactionId = detail.TransactionId,
+                    Customer = detail.Customer,
+                    Board = detail.Board
+                };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, TransactionEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.TransactionId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateTransactionService();
+
+            if (service.UpdateTransaction(model))
+            {
+                TempData["SaveResult"] = "Your transaction was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Your transaction could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateTransactionService();
+            var model = svc.GetTransactionById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteTransaction(int id)
+        {
+            var service = CreateTransactionService();
+
+            service.DeleteTransaction(id);
+
+            TempData["SaveResult"] = "Your transaction was deleted";
+
+            return RedirectToAction("Index");
+        }
     }
+}
 }
