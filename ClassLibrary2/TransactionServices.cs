@@ -74,5 +74,41 @@ namespace BoardBrowser.Services
                     };
             }
         }
+        public bool UpdateTransaciton(TransactionEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Transactions
+                        .Single(e => e.TransactionId == model.TransactionId);
+
+                entity.Customer = model.Customer;
+                entity.Board = model.Board;
+             
+
+
+
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteTransaction(int transactionId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Transactions
+                        .Single(e => e.TransactionId == transactionId);
+
+                ctx.Transactions.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
     }
 }
+

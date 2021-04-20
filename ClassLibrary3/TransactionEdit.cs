@@ -1,16 +1,16 @@
 ﻿using BoardBrowser.Data;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BoardBrowser.Models
 {
-    public class TransactionCreate
+    public class TransactionEdit
     {
-        public int CustomerId { get; set; }
+        public int TransactionId { get; set; }
         public Customer Customer { get; set; }
-        public int BoardId { get; set; }
         public Board Board { get; set; }
-        public DateTime DateOfTransaction { get; set; }
     }
 }

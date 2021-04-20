@@ -75,5 +75,42 @@ namespace BoardBrowser.Services
                     };
             }
         }
+
+        public bool UpdateBoard(BoardEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Boards
+                        .Single(e => e.BoardId == model.BoardId);
+
+                entity.BoardCategory = model.BoardCategory;
+                entity.BoardName = model.BoardName;
+                entity.Description = model.Description;
+                entity.Price = model.Price;
+
+
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteBoard(int boardId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Boards
+                        .Single(e => e.BoardId == boardId);
+
+                ctx.Boards.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+
     }
 }
