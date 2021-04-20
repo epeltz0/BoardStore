@@ -57,21 +57,9 @@
     <Compile Include="Board.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202104160109041_InitialCreate.cs" />
-    <Compile Include="Migrations\202104160109041_InitialCreate.Designer.cs">
-      <DependentUpon>202104160109041_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104192158087_Catagory.cs" />
-    <Compile Include="Migrations\202104192158087_Catagory.Designer.cs">
-      <DependentUpon>202104192158087_Catagory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104192243398_role.cs" />
-    <Compile Include="Migrations\202104192243398_role.Designer.cs">
-      <DependentUpon>202104192243398_role.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104192320076_role1.cs" />
-    <Compile Include="Migrations\202104192320076_role1.Designer.cs">
-      <DependentUpon>202104192320076_role1.cs</DependentUpon>
+    <Compile Include="Migrations\202104202305494_InitialMigrations.cs" />
+    <Compile Include="Migrations\202104202305494_InitialMigrations.Designer.cs">
+      <DependentUpon>202104202305494_InitialMigrations.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,17 +71,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104160109041_InitialCreate.resx">
-      <DependentUpon>202104160109041_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104192158087_Catagory.resx">
-      <DependentUpon>202104192158087_Catagory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104192243398_role.resx">
-      <DependentUpon>202104192243398_role.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104192320076_role1.resx">
-      <DependentUpon>202104192320076_role1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104202305494_InitialMigrations.resx">
+      <DependentUpon>202104202305494_InitialMigrations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -10,7 +10,6 @@ namespace ClassLibrary1.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "BoardBrowser.Data.ApplicationDbContext";
         }
 
         protected override void Seed(BoardBrowser.Data.ApplicationDbContext context)
