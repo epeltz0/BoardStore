@@ -26,12 +26,13 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Boards", "Index", "Board")</li>
+                        <li>@Html.ActionLink("Transaction", "Index", "Transaction")</li>
+                        <li>@Html.ActionLink("Customer Information", "Index", "Customer Information")</li>
                     }
+                    <li>@Html.ActionLink("Boards", "Index", "Board")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Role", "Index", "Role")</li>
-                    <li>@Html.ActionLink("Transaction", "Index", "Transaction")</li>
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
