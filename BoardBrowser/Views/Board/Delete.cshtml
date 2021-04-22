@@ -12,13 +12,17 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.BoardId)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BoardId)
+        </dd>
+        <dt>
             @Html.DisplayNameFor(model => model.BoardName)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.BoardName)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Description)
         </dt>
@@ -26,15 +30,12 @@
         <dd>
             @Html.DisplayFor(model => model.Description)
         </dd>
-
         <dt>
             @Html.DisplayNameFor(model => model.Price)
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.Price)
         </dd>
-
     </dl>
 
     @using (Html.BeginForm()) {

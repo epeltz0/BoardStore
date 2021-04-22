@@ -1,4 +1,4 @@
-﻿@model BoardBrowser.Models.TransactionCreate
+﻿@model BoardBrowser.Models.OrderCreate
 
 @{
     ViewBag.Title = "Create";
@@ -11,7 +11,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>TransactionCreate</h4>
+        <h4>OrderCreate</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

@@ -39,8 +39,8 @@ namespace BoardBrowser.Data
         }
 
         public DbSet<Board> Boards { get; set; }
-        public DbSet<Transaction> Transactions { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -54,7 +54,8 @@ namespace BoardBrowser.Data
                 .Add(new IdentityUserRoleConfiguration());
         }
 
-        public DbSet<Roles> Role { get; set; }
+       
+       
     }
 
     public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

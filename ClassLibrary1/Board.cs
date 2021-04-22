@@ -9,6 +9,7 @@ namespace BoardBrowser.Data
     public class Board
     {
         [Key]
+        [Required]
         public int BoardId { get; set; }
         [Required]
         public string BoardName { get; set; }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BoardBrowser.Models.TransactionListItem>
+﻿@model IEnumerable<BoardBrowser.Models.OrderListItem>
 
 @{
     ViewBag.Title = "Index";
@@ -12,6 +12,15 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.OrderId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.DateOfTransaction)
         </th>
         <th></th>
@@ -19,6 +28,15 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoardId)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.DateOfTransaction)
         </td>

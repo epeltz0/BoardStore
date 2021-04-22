@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace BoardBrowser.Models
 {
-    public class TransactionEdit
+    public class OrderEdit
     {
-        public int TransactionId { get; set; }
-        public Customer Customer { get; set; }
-        public Board Board { get; set; }
+        public int OrderId { get; set; }
+        
+        public int CustomerId { get; set; }
+        public int BoardId { get; set; }
     }
 }

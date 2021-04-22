@@ -9,13 +9,13 @@ using System.Web.Mvc;
 
 namespace BoardBrowser.Controllers
 {
-    public class TransactionController : Controller
+    public class OrderController : Controller
     {
         [Authorize]
         public ActionResult Index()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new TransactionServices(userId);
+            var service = new OrderServices(userId);
             var model = service.GetTransactions();
             return View(model);
         }
@@ -27,7 +27,7 @@ namespace BoardBrowser.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TransactionCreate model)
+        public ActionResult Create(OrderCreate model)
         {
             if (!ModelState.IsValid) return View(model);
 
@@ -44,10 +44,10 @@ namespace BoardBrowser.Controllers
             return View(model);
         }
 
-        private TransactionServices CreateTransactionService()
+        private OrderServices CreateTransactionService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new TransactionServices(userId);
+            var service = new OrderServices(userId);
             return service;
         }
 
@@ -64,22 +64,22 @@ namespace BoardBrowser.Controllers
             var service = CreateTransactionService();
             var detail = service.GetTransactionById(id);
             var model =
-                new TransactionEdit
+                new OrderEdit
                 {
-                    TransactionId = detail.TransactionId,
-                    Customer = detail.Customer,
-                    Board = detail.Board
+                    OrderId = detail.OrderId,
+                    CustomerId = detail.CustomerId,
+                    BoardId = detail.BoardId
                 };
             return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, TransactionEdit model)
+        public ActionResult Edit(int id, OrderEdit model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            if (model.TransactionId != id)
+            if (model.OrderId != id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);

@@ -5,11 +5,13 @@ using System.Text;
 
 namespace BoardBrowser.Models
 {
-    public class TransactionDetail
+    public class OrderCreate
     {
-        public int TransactionId { get; set; }
-        public Customer Customer { get; set; }
-        public Board Board { get; set; }
+        
+        public int CustomerId { get; set; }
+        
+        public int BoardId { get; set; }
+      
         public DateTime DateOfTransaction { get; set; }
     }
 }

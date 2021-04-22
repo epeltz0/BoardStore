@@ -1,4 +1,4 @@
-﻿@model BoardBrowser.Models.TransactionDetail
+﻿@model BoardBrowser.Models.OrderDetail
 
 @{
     ViewBag.Title = "Delete";
@@ -8,15 +8,31 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>TransactionDetail</h4>
+    <h4>OrderDetail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.TransactionId)
+            @Html.DisplayNameFor(model => model.OrderId)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TransactionId)
+            @Html.DisplayFor(model => model.OrderId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoardId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoardId)
         </dd>
 
         <dt>

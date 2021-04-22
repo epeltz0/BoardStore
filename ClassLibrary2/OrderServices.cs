@@ -7,47 +7,48 @@ using System.Text;
 
 namespace BoardBrowser.Services
 {
-    public class TransactionServices
+    public class OrderServices
     {
         private readonly Guid _userId;
 
-        public TransactionServices(Guid userId)
+        public OrderServices(Guid userId)
         {
             _userId = userId;
         }
 
-        public bool CreateTransaction(TransactionCreate model)
+        public bool CreateTransaction(OrderCreate model)
         {
             var entity =
-                new Transaction()
+                new Order()
                 {
-                    Board = model.Board,
-                    Customer = model.Customer,
+                    BoardId = model.BoardId,
+                    CustomerId = model.CustomerId,
                     DateOfTransaction = model.DateOfTransaction,
 
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Transactions.Add(entity);
+                ctx.Orders.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
 
-        public IEnumerable<TransactionListItem> GetTransactions()
+        public IEnumerable<OrderListItem> GetTransactions()
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
-                        .Transactions
+                        .Orders
                         .Select(
 
                             e =>
-                                new TransactionListItem
+                                new OrderListItem
                                 {
-                                    Customer = e.Customer,
-                                    Board = e.Board,
+                                    OrderId = e.OrderId,
+                                    CustomerId = e.CustomerId,
+                                    BoardId = e.BoardId,
                                     DateOfTransaction = e.DateOfTransaction
                                 }
                         );
@@ -56,35 +57,35 @@ namespace BoardBrowser.Services
             }
         }
 
-        public TransactionDetail GetTransactionById(int id)
+        public OrderDetail GetTransactionById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Transactions
-                        .Single(e => e.TransactionId== id);
+                        .Orders
+                        .Single(e => e.OrderId== id);
                 return
-                    new TransactionDetail
+                    new OrderDetail
                     {
-                        TransactionId = entity.TransactionId,
-                        Customer = entity.Customer,
-                        Board = entity.Board,
+                        OrderId = entity.OrderId,
+                        CustomerId = entity.CustomerId,
+                        BoardId = entity.BoardId,
                         DateOfTransaction = entity.DateOfTransaction
                     };
             }
         }
-        public bool UpdateTransaction(TransactionEdit model)
+        public bool UpdateTransaction(OrderEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Transactions
-                        .Single(e => e.TransactionId == model.TransactionId);
+                        .Orders
+                        .Single(e => e.OrderId == model.OrderId);
 
-                entity.Customer = model.Customer;
-                entity.Board = model.Board;
+                entity.CustomerId = model.CustomerId;
+                entity.BoardId = model.BoardId;
              
 
 
@@ -94,16 +95,16 @@ namespace BoardBrowser.Services
             }
         }
 
-        public bool DeleteTransaction(int transactionId)
+        public bool DeleteTransaction(int orderId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
-                        .Transactions
-                        .Single(e => e.TransactionId == transactionId);
+                        .Orders
+                        .Single(e => e.OrderId == orderId);
 
-                ctx.Transactions.Remove(entity);
+                ctx.Orders.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
