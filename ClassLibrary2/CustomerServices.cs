@@ -66,6 +66,7 @@ namespace BoardBrowser.Services
                     return
                         new CustomerDetails
                         {
+                            CustomerId = entity.CustomerId,
                             FirstName = entity.FirstName,
                             LastName = entity.LastName,
                             YearsSkating = entity.YearsSkating,
