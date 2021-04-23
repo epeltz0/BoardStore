@@ -70,7 +70,9 @@ namespace BoardBrowser.Services
                     {
                         OrderId = entity.OrderId,
                         CustomerId = entity.CustomerId,
+                        Customer = entity.Customer,
                         BoardId = entity.BoardId,
+                        Board = entity.Board,
                         DateOfTransaction = entity.DateOfTransaction
                     };
             }

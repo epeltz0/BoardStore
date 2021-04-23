@@ -90,8 +90,6 @@ namespace BoardBrowser.Services
                 entity.Description = model.Description;
                 entity.Price = model.Price;
 
-
-
                 return ctx.SaveChanges() == 1;
             }
         }

@@ -45,6 +45,7 @@ namespace BoardBrowser.Services
                                 e =>
                                     new CustomerListItems
                                     {
+                                        CustomerId = e.CustomerId,
                                         FirstName = e.FirstName,
                                         LastName = e.LastName,
                                         YearsSkating = e.YearsSkating
