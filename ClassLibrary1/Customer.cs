@@ -7,7 +7,9 @@ using System.Text;
 namespace BoardBrowser.Data
 {
     public class Customer
+
     {
+       
         [Key]
         [Required]
         public int CustomerId { get; set; }

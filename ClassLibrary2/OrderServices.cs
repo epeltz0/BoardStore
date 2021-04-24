@@ -41,6 +41,7 @@ namespace BoardBrowser.Services
                 var query =
                     ctx
                         .Orders
+                        
                         .Select(
 
                             e =>

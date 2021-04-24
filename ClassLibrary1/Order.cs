@@ -10,6 +10,7 @@ namespace BoardBrowser.Data
 {
     public class Order
     {
+       
         [Key]
         [Required]
         public int OrderId { get; set; }
