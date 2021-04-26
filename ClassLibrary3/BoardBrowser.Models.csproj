@@ -54,6 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddressCreate.cs" />
+    <Compile Include="AddressDetails.cs" />
+    <Compile Include="AddressEdit.cs" />
+    <Compile Include="AddressListItem.cs" />
     <Compile Include="BoardCreate.cs" />
     <Compile Include="BoardDetails.cs" />
     <Compile Include="BoardEdit.cs" />
