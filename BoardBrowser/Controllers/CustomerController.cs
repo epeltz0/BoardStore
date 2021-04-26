@@ -69,7 +69,8 @@ namespace BoardBrowser.Controllers
                     CustomerId = detail.CustomerId,
                     FirstName = detail.FirstName,
                     LastName= detail.LastName,
-                    YearsSkating = detail.YearsSkating
+                    YearsSkating = detail.YearsSkating,
+                    AddressId = detail.AddressId
                 };
             return View(model);
         }

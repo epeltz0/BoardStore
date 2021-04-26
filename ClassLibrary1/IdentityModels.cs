@@ -41,6 +41,7 @@ namespace BoardBrowser.Data
         public DbSet<Board> Boards { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Address> Addresses { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

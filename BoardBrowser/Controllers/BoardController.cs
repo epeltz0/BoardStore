@@ -71,7 +71,8 @@ namespace BoardBrowser.Controllers
                     BoardCategory = detail.BoardCategory,
                     BoardName = detail.BoardName,
                     Description = detail.Description,
-                    Price = detail.Price
+                    Price = detail.Price,
+                    BoardQuality = detail.BoardQuality
                 };
             return View(model);
         }
