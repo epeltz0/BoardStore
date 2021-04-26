@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs" />
     <Compile Include="Board.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="IdentityModels.cs" />

@@ -30,26 +30,32 @@
         <th>
             @Html.DisplayNameFor(model => model.BoardName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardQuality)
+        </th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BoardId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BoardName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BoardCategory)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.BoardId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.BoardId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.BoardId })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.BoardId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BoardName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BoardCategory)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BoardQuality)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.BoardId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.BoardId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.BoardId })
+    </td>
+</tr>
     }
 </table>
 

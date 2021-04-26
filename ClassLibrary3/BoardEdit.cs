@@ -14,5 +14,6 @@ namespace BoardBrowser.Models
         public string BoardName { get; set; }
         public string Description { get; set; }
         public int Price { get; set; }
+        public Quality BoardQuality { get; set; }
     }
 }

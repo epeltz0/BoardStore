@@ -12,5 +12,6 @@ namespace BoardBrowser.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int YearsSkating { get; set; }
+        public int AddressId { get; set; }
     }
 }

@@ -18,5 +18,6 @@ namespace BoardBrowser.Models
         
         public int Price { get; set; }
         public Category BoardCategory { get; set; }
+        public Quality BoardQuality { get; set; }
     }
 }

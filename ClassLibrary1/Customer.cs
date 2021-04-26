@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,7 +19,12 @@ namespace BoardBrowser.Data
         [Required]
         public string LastName { get; set; }
         public int YearsSkating { get; set; }
-       
+
+        [Required]
+        [ForeignKey(nameof(Address))]
+        public int AddressId { get; set; }
+        public Address Address { get; set; }
+
 
 
     }

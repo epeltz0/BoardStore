@@ -18,12 +18,19 @@ namespace BoardBrowser.Data
         [Required]
         public int Price { get; set; }
         public Category BoardCategory { get; set; }
+        public Quality BoardQuality { get; set; }
         public enum Category
         {
             Longboard,
             Pennyboard,
             Skateboard,
             Accessory
+        }
+
+        public enum Quality
+        {
+            New,
+            Used
         }
 
 

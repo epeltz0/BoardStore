@@ -13,6 +13,7 @@ namespace BoardBrowser.Models
         public int BoardId { get; set; }
         public string BoardName { get; set; }
         public Category BoardCategory { get; set;  }
+        public Quality BoardQuality { get; set; }
         
     }
 }

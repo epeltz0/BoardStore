@@ -25,6 +25,7 @@ namespace BoardBrowser.Services
                     Description = model.Description,
                     Price = model.Price,
                     BoardCategory = model.BoardCategory,
+                    BoardQuality = model.BoardQuality
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -48,7 +49,8 @@ namespace BoardBrowser.Services
                                 {
                                     BoardId = e.BoardId,
                                     BoardName = e.BoardName,
-                                    BoardCategory = e.BoardCategory
+                                    BoardCategory = e.BoardCategory,
+                                    BoardQuality = e.BoardQuality
                                 }
                         );
 
@@ -71,7 +73,8 @@ namespace BoardBrowser.Services
                         BoardName = entity.BoardName,
                         Description = entity.Description,
                         Price = entity.Price,     
-                        BoardCategory = entity.BoardCategory
+                        BoardCategory = entity.BoardCategory,
+                        BoardQuality = entity.BoardQuality
                     };
             }
         }
@@ -89,6 +92,7 @@ namespace BoardBrowser.Services
                 entity.BoardName = model.BoardName;
                 entity.Description = model.Description;
                 entity.Price = model.Price;
+                entity.BoardQuality = model.BoardQuality;
 
                 return ctx.SaveChanges() == 1;
             }

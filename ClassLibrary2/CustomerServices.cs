@@ -24,6 +24,7 @@ namespace BoardBrowser.Services
                         FirstName = model.FirstName,
                         LastName = model.LastName,
                         YearsSkating = model.YearsSkating,
+                        AddressId = model.AddressId
                     };
 
                 using (var ctx = new ApplicationDbContext())
@@ -48,7 +49,9 @@ namespace BoardBrowser.Services
                                         CustomerId = e.CustomerId,
                                         FirstName = e.FirstName,
                                         LastName = e.LastName,
-                                        YearsSkating = e.YearsSkating
+                                        YearsSkating = e.YearsSkating,
+                                        AddressId = e.AddressId
+
                                     }
                             );
 
@@ -71,6 +74,7 @@ namespace BoardBrowser.Services
                             FirstName = entity.FirstName,
                             LastName = entity.LastName,
                             YearsSkating = entity.YearsSkating,
+                            AddressId = entity.AddressId
          
                         };
                 }
@@ -87,6 +91,7 @@ namespace BoardBrowser.Services
                 entity.FirstName = model.FirstName;
                 entity.LastName = model.LastName;
                 entity.YearsSkating = model.YearsSkating;
+                entity.AddressId = model.AddressId;
                 
 
 
