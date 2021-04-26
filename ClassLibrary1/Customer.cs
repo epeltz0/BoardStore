@@ -20,7 +20,7 @@ namespace BoardBrowser.Data
         public string LastName { get; set; }
         public int YearsSkating { get; set; }
 
-        [Required]
+       
         [ForeignKey(nameof(Address))]
         public int AddressId { get; set; }
         public Address Address { get; set; }

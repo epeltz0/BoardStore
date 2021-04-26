@@ -14,7 +14,7 @@ namespace BoardBrowser.Data
         public int AddressId { get; set; }
         [Required]
         public string AddressLine1 { get; set; }
-        [Required]
+        
         public string AddressLine2 { get; set; }
         [Required]
         public string State { get; set; }
