@@ -249,7 +249,6 @@
     <Content Include="Views\Customer\Delete.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\Create.cshtml" />
-    <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Order\Delete.cshtml" />
     <Content Include="Views\Board\Edit.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
@@ -259,6 +258,7 @@
     <Content Include="Views\Address\Edit.cshtml" />
     <Content Include="Views\Address\Delete.cshtml" />
     <Content Include="Views\Address\Index.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

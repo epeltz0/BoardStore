@@ -49,7 +49,11 @@ namespace BoardBrowser.Services
                                 {
                                     OrderId = e.OrderId,
                                     CustomerId = e.CustomerId,
+                                    FirstName = e.Customer.FirstName,
+                                    LastName = e.Customer.LastName,
                                     BoardId = e.BoardId,
+                                    BoardName = e.Board.BoardName,
+                                    Price = e.Board.Price,
                                     DateOfTransaction = e.DateOfTransaction
                                 }
                         );
@@ -71,9 +75,12 @@ namespace BoardBrowser.Services
                     {
                         OrderId = entity.OrderId,
                         CustomerId = entity.CustomerId,
-                        Customer = entity.Customer,
+                        FirstName = entity.Customer.FirstName,
+                        LastName = entity.Customer.LastName,
                         BoardId = entity.BoardId,
-                        Board = entity.Board,
+                        BoardCategory = entity.Board.BoardCategory,
+                        BoardName = entity.Board.BoardName,
+                        Price = entity.Board.Price,
                         DateOfTransaction = entity.DateOfTransaction
                     };
             }

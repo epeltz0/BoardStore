@@ -74,7 +74,12 @@ namespace BoardBrowser.Services
                             FirstName = entity.FirstName,
                             LastName = entity.LastName,
                             YearsSkating = entity.YearsSkating,
-                            AddressId = entity.AddressId
+                            AddressId = entity.AddressId,
+                            AddressLine1 = entity.Address.AddressLine1,
+                            AddressLine2 = entity.Address.AddressLine2,
+                            State = entity.Address.State,
+                            City = entity.Address.City,
+                            ZipCode = entity.Address.ZipCode
          
                         };
                 }

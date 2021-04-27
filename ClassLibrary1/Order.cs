@@ -17,11 +17,11 @@ namespace BoardBrowser.Data
         [Required]
         [ForeignKey(nameof(Customer))]
         public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
+        public virtual Customer Customer { get; set; }
         [Required]
         [ForeignKey(nameof(Board))]
         public int BoardId { get; set; }
-        public Board Board { get; set; }
+        public virtual Board Board { get; set; }
 
         public DateTime DateOfTransaction { get; set; }
     }

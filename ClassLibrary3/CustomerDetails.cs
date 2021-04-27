@@ -16,5 +16,10 @@ namespace BoardBrowser.Models
         public string LastName { get; set; }
         public int YearsSkating { get; set; }
         public int AddressId { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public string State { get; set; }
+        public string City { get; set; }
+        public int ZipCode { get; set; }
     }
 }
