@@ -26,7 +26,8 @@ namespace BoardBrowser.Services
                     AddressLine2 = model.AddressLine2,
                     State = model.State,
                     City = model.City,
-                    ZipCode = model.ZipCode
+                    ZipCode = model.ZipCode,
+                    CustomerId = model.CustomerId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -53,7 +54,8 @@ namespace BoardBrowser.Services
                                     AddressLine2 = e.AddressLine2,
                                     State = e.State,
                                     City = e.City,
-                                    ZipCode = e.ZipCode
+                                    ZipCode = e.ZipCode,
+                                    CustomerId = e.CustomerId
                                 }
                         );
 
@@ -77,7 +79,11 @@ namespace BoardBrowser.Services
                         AddressLine2 = entity.AddressLine2,
                         State = entity.State,
                         City = entity.City,
-                        ZipCode = entity.ZipCode
+                        ZipCode = entity.ZipCode,
+                        CustomerId = entity.CustomerId,
+                        FirstName = entity.Customer.FirstName,
+                        LastName = entity.Customer.LastName,
+
                     };
             }
         }

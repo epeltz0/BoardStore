@@ -71,7 +71,8 @@ namespace BoardBrowser.Controllers
                     AddressLine2 = detail.AddressLine2,
                     State = detail.State,
                     City = detail.City,
-                    ZipCode = detail.ZipCode
+                    ZipCode = detail.ZipCode,
+                    CustomerId = detail.CustomerId
 
                 };
             return View(model);

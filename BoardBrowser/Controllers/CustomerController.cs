@@ -70,7 +70,7 @@ namespace BoardBrowser.Controllers
                     FirstName = detail.FirstName,
                     LastName= detail.LastName,
                     YearsSkating = detail.YearsSkating,
-                    AddressId = detail.AddressId
+                    
                 };
             return View(model);
         }

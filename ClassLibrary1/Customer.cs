@@ -21,9 +21,7 @@ namespace BoardBrowser.Data
         public int YearsSkating { get; set; }
 
        
-        [ForeignKey(nameof(Address))]
-        public int AddressId { get; set; }
-        public virtual Address Address { get; set; }
+        
 
 
 

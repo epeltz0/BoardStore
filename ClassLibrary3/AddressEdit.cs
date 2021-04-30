@@ -21,5 +21,6 @@ namespace BoardBrowser.Models
         public string City { get; set; }
         [Required]
         public int ZipCode { get; set; }
+        public int CustomerId { get; set; }
     }
 }

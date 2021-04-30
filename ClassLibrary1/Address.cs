@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,5 +23,9 @@ namespace BoardBrowser.Data
         public string City { get; set; }
         [Required]
         public int ZipCode { get; set; }
+
+        [ForeignKey(nameof(Customer))]
+        public int CustomerId { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

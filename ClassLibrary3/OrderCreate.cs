@@ -13,5 +13,6 @@ namespace BoardBrowser.Models
         public int BoardId { get; set; }
       
         public DateTime DateOfTransaction { get; set; }
+       
     }
 }

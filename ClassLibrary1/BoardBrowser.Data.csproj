@@ -78,6 +78,10 @@
     <Compile Include="Migrations\202104262202431_UpdateAddress.Designer.cs">
       <DependentUpon>202104262202431_UpdateAddress.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104302015034_Foreign-Key.cs" />
+    <Compile Include="Migrations\202104302015034_Foreign-Key.Designer.cs">
+      <DependentUpon>202104302015034_Foreign-Key.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Order.cs" />
@@ -110,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104262202431_UpdateAddress.resx">
       <DependentUpon>202104262202431_UpdateAddress.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104302015034_Foreign-Key.resx">
+      <DependentUpon>202104302015034_Foreign-Key.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
