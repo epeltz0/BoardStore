@@ -26,7 +26,7 @@ namespace BoardBrowser.Data
             Skateboard,
             Accessory
         }
-
+        
         public enum Quality
         {
             New,
