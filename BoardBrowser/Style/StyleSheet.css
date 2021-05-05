@@ -169,6 +169,7 @@
     flex-direction: column;
 }
 
-    .card-group > .card {
-        margin-bottom: 15px;
-    }
+.card-group > .card {
+   margin-bottom: 15px;
+}
+

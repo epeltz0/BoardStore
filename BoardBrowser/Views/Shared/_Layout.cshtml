@@ -26,15 +26,14 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Purchase", "Index", "Order")</li>
-                        <li>@Html.ActionLink("Profiles", "Index", "Customer")</li>
-                        <li>@Html.ActionLink("Shipping Information", "Index", "Address")</li>
-                        <li>@Html.ActionLink("Boards", "Index", "Board")</li>
+                        <li>@Html.ActionLink("Browse", "Index", "Board")</li>
+                        <li>@Html.ActionLink("Profile", "Index", "Customer")</li>
+                        <li>@Html.ActionLink("Transactions", "Index", "Order")</li>
+                        <li>@Html.ActionLink("Address", "Index", "Address")</li>
                     }
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -43,7 +42,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
+        <footer class="footer">
             <p>&copy; @DateTime.Now.Year - BoardBrowser</p>
         </footer>
     </div>
